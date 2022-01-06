@@ -4,7 +4,7 @@ import {
   } from '../actions';
   import { defaultState } from '../utils';
 
-    const gameReducer = (state = defaultState, action) => {
+    const gameReducer = (state = defaultState(), action) => {
         
         switch (action.type) {
             case ROTATE:
