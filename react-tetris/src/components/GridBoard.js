@@ -6,7 +6,7 @@ import { moveDown } from '../actions';
 
 export default function GridBoard(props) {
   const requestRef = useRef();
-  const lastUpdateTimer = useRef(0);
+  const lastUpdateTimeRef = useRef(0);
   const progressTimeRef = useRef(0);
   const dispatch = useDispatch();
   const game = useSelector((state) => state.game)
@@ -58,7 +58,7 @@ export default function GridBoard(props) {
     requestRef.current = requestAnimationFrame(update);
     return () => cancelAnimationFrame(requestRef.current)
   }, [isRunning])
-  
+
     return (
         <div className='grid-board'>
             {gridSquares}
