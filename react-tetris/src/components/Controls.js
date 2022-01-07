@@ -5,26 +5,39 @@ import { moveDown, moveLeft, moveRight, rotate } from '../actions';
 export default function Controls(props) {
     const dispatch = useDispatch();
     const isRunning = useSelector((state) => state.isRunning);
+    const gameOver = useSelector((state) => state.gameOver);
     return (
         <div className="controls">
             <button
+                // disabled={!isRunning || gameOver}
                 className="control-button"
-                onClick={(e) => { dispatch(moveLeft()) }}
+                onClick={(e) => { 
+                    // if (!isRunning || gameOver) { return } 
+                    dispatch(moveLeft()) }}
             >Left</button>
             
             <button
+                // disabled={!isRunning || gameOver}
                 className="control-button"
-                onClick={(e) => { dispatch(moveRight()) }}
+                onClick={(e) => { 
+                    // if (!isRunning || gameOver) { return } 
+                    dispatch(moveRight()) }}
             >Right</button>
 
             <button
+                // disabled={!isRunning || gameOver}
                 className="control-button"
-                onClick={(e) => { dispatch(rotate()) }}
+                onClick={(e) => { 
+                    // if (!isRunning || gameOver) { return } 
+                    dispatch(rotate()) }}
             >Rotate</button>
 
             <button
+                // disabled={!isRunning || gameOver}
                 className="control-button"
-                onClick={(e) => { dispatch(moveDown()) }}
+                onClick={(e) => { 
+                    // if (!isRunning || gameOver) { return } 
+                    dispatch(moveDown()) }}
             >Down</button>
         </div>
     );
