@@ -18,9 +18,16 @@ import {
               return state;
 
             case MOVE_RIGHT:
+                if(canMoveTo(shape, grid, x + 1, y, rotation)) {
+                    return { ...state, x: x + 1 }
+                }
                 return state;
 
             case MOVE_LEFT:
+                //subtract 1 from x and check if position is valid
+                if(canMoveTo(shape, grid, x - 1, y, rotation)) {
+                    return { ...state, x: x - 1 }
+                }
                 return state;
 
             case MOVE_DOWN:
